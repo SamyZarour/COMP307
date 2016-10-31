@@ -4,19 +4,21 @@
 # Import modules for CGI handling 
 import sys, json, cgi
 
-form = cgi.FieldStorage()
-userName = "blank"
-userName = form["userName"].value
+#form = cgi.FieldStorage()
+#userName = "blank"
+#userName = form["userName"].value
 
 result = {'success':'true','message':'The Command Completed Successfully'};
 inputedTest = {'Name':'test'}
 
-myjson = json.loads('["foo", {"bar":["baz", null, 1.0, 2]}]')
+myjson = json.load(sys.stdin)
 # Do something with 'myjson' object
 
 #print 'Content-Type: application/json\n\n'
 
+with open('names.txt', 'w') as outfile:
+    json.dump(myjson, outfile)
 
-print "Content-type:text/html\r\n\r\n"
+print "Content-type:application/json\r\n\r\n"
 print json.dumps(result)
 #print "test"

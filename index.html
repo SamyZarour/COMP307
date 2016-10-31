@@ -1,16 +1,13 @@
 <html>
 <head>
-	<title>Assignment 6</title>
+	<title>aAssignment 6</title>
 </head>
 
 
 
 <body>
-	<form action="cgi-bin/results.py" method="post"></p>
-               Name: <input type="text" name="userName"><br>
-               <input type="submit" name="newName" value="Submit">
-        </form>
 	<script>
+	console.log("entered");	
 	$.ajax({
     		url: "cgi-bin/results.py",
     		type: "post",
@@ -20,6 +17,6 @@
         		alert(response);
     		}
 	});
-	<script/>
+	</script>
 </body> 
 </html>

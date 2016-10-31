@@ -10,5 +10,16 @@
                Name: <input type="text" name="userName"><br>
                <input type="submit" name="newName" value="Submit">
         </form>
+	<script>
+	$.ajax({
+    		url: "cgi-bin/results.py",
+    		type: "post",
+    		data: JSON.stringify({'userName':"myName"}),
+    		dataType: "json",
+    		success: function(response) {
+        		alert(response);
+    		}
+	});
+	<script/>
 </body> 
 </html>
